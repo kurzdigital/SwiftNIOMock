@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name = 'SwiftNIOMock'
-    s.version = '0.0.2'
+    s.version = '0.0.3'
     s.license = { :type => 'MIT', :file => 'LICENSE' }
     s.summary = 'A web server based on SwiftNIO designed to be used as a mock server in UI automation tests'
     s.homepage = 'https://github.com/ilyapuchka/SwiftNIOMock'

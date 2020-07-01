@@ -39,11 +39,11 @@ open class Server {
             .childChannelOption(ChannelOptions.maxMessagesPerRead, value: 1)
     }
 
-    public func start() throws {
+    public func start(host: String = "localhost") throws {
         group = group ?? MultiThreadedEventLoopGroup(numberOfThreads: System.coreCount)
         bootstrap = bootstrap ?? bootstrapServer(handler: handler)
 
-        serverChannel = try bootstrap.bind(host: "localhost", port: port).wait()
+        serverChannel = try bootstrap.bind(host: host, port: port).wait()
         print("Server listening on:", serverChannel.localAddress!)
 
         serverChannel.closeFuture.whenComplete {
